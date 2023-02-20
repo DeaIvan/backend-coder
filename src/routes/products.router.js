@@ -4,10 +4,10 @@ import fs from 'fs';
 import ProductManager from '../manager/ProductManager.js';
 
 
-const prodMng = new ProductManager("./productos.json");
+const prodMng = new ProductManager("./files/productos.json");
 const router = Router();
 
-const products = await promises.readFile('./productos.json', 'utf-8');
+const products = await promises.readFile('./files/productos.json', 'utf-8');
 let data = JSON.parse(products, null, "\n");
 
 router.post('/', async (req, res) => {

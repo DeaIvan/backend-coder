@@ -4,7 +4,7 @@ import fs from 'fs';
 import CartManager from '../manager/CartManager.js';
 
 
-const cartMng = new CartManager("./carts.json");
+const cartMng = new CartManager("./files/carts.json");
 const router = Router();
 
 router.post('/', async (req, res) => {

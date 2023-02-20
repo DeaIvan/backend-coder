@@ -1,3 +1,123 @@
 [
-	
+	{
+		"title": "Intelligent Steel Table",
+		"description": "In corrupti eius.",
+		"price": 935,
+		"status": true,
+		"code": "w",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 1
+	},
+	{
+		"title": "Awesome Wooden Computer",
+		"description": "Tempore ad velit saepe non earum qui sit. Illo ipsa neque ea et dolore. Nemo minus libero perspiciatis in pariatur. Accusantium molestiae maxime veritatis nobis et. Molestiae totam exercitationem amet et praesentium incidunt et repudiandae quia.",
+		"price": 393,
+		"status": true,
+		"code": "n",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 2
+	},
+	{
+		"title": "Tasty Steel Fish",
+		"description": "accusamus",
+		"price": 813,
+		"status": true,
+		"code": "q",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 3
+	},
+	{
+		"title": "Unbranded Frozen Bacon",
+		"description": "Tempore voluptas ipsa provident doloremque occaecati enim autem soluta deserunt.",
+		"price": 748,
+		"status": true,
+		"code": "z",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 4
+	},
+	{
+		"title": "Sleek Metal Pizza",
+		"description": "Labore aperiam debitis in beatae occaecati consequatur quas sit rerum.",
+		"price": 866,
+		"status": true,
+		"code": "t",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 5
+	},
+	{
+		"title": "Intelligent Wooden Bike",
+		"description": "Maiores sapiente aut vitae saepe. Enim est alias in dolores. Hic nam officia velit corrupti ipsam fuga. Non libero et perspiciatis nesciunt voluptatem quae sequi maiores iusto. Dignissimos tempora voluptatem ut sapiente officiis non.",
+		"price": 985,
+		"status": true,
+		"code": "t",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 6
+	},
+	{
+		"title": "Fantastic Plastic Bike",
+		"description": "Voluptatem dolorem et impedit esse eaque nesciunt. Velit accusantium eligendi accusantium quis voluptatem optio sit aut eius. Dolor et ut tenetur facere. Labore natus delectus sapiente. Tenetur aut illum nemo. Dolores saepe quos rerum et totam officia pariatur aspernatur quidem.",
+		"price": 754,
+		"status": true,
+		"code": "4",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 7
+	},
+	{
+		"title": "Rustic Concrete Towels",
+		"description": "voluptatem",
+		"price": 945,
+		"status": true,
+		"code": "c",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 8
+	},
+	{
+		"title": "Fantastic Cotton Bacon",
+		"description": "eaque",
+		"price": 587,
+		"status": true,
+		"code": "y",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 9
+	},
+	{
+		"title": "Awesome Fresh Sausages",
+		"description": "itaque",
+		"price": 251,
+		"status": true,
+		"code": "g",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": "",
+		"id": 10
+	},
+	{
+		"id": 1,
+		"title": "Intelligent Steel Table",
+		"description": "In corrupti eius.",
+		"price": 935,
+		"status": true,
+		"code": "w",
+		"stock": 100,
+		"category": "Producto",
+		"thumbnails": ""
+	}
 ]

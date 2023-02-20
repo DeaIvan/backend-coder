@@ -1,85 +1,70 @@
 import { Router } from 'express';
 import { promises } from 'fs';
 import fs from 'fs';
+import ProductManager from '../src/ProductManager.js';
 
+
+const prodMng = new ProductManager("./productos.json");
 const router = Router();
 
-const products = await promises.readFile('./src/productos.json', 'utf-8');
+const products = await promises.readFile('./productos.json', 'utf-8');
 let data = JSON.parse(products, null, "\n");
 
 router.post('/', async (req, res) => {
-
     const newProduct = req.body;
 
     if (!newProduct.title || !newProduct.description || !newProduct.price || !newProduct.status || !newProduct.code || !newProduct.stock) {
         return res.status(400).send({status: 'error', message: 'Incomplete values'});
-    };
-
-    if (data.length === 0) {
-        newProduct.id = 1;
-    } else {
-        newProduct.id = data[data.length - 1].id + 1;
+    }else{
+        const products = await prodMng.addProduct(newProduct);
+        res.send(newProduct.title);
     }
-    
-    await data.push(newProduct);
 
-    await fs.promises.writeFile(data, JSON.stringify(newProduct, null, '\t'))
-    .then(() => {return console.log(`Se agrego el producto ${newProduct.title} correctamente`)})
-    .catch(error => console.log(error))
-    console.log(newProduct);
-    res.send(`Producto cargado exitosamente ${newProduct.title}`);   
 });
 
 
 router.get('/', async (req, res) => {
+    const products = await prodMng.getProducts()
     const limit = Number(req.query.limit)
-    if(!limit) return res.send(data);
 
-    const filterLimit = data.filter(p => data.length = limit)
+    if(!limit) return res.send(products);
+    const filterLimit = products.filter(p => products.length = limit)
 
     res.send({filterLimit})   
 });
 
 
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     const idProducto = Number(req.params.id);
-
-    const product = data.find(u=>u.id === idProducto);
-    if(!product) return res.send({error: 'Producto no encontrado'});
-    res.send(product);
+    try {
+        const products = await prodMng.getProduct(idProducto);
+        res.send(products);
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id',async (req, res) => {
     const product = req.body;
     const productId = Number(req.params.id);
 
-    if (!newProduct.title || !newProduct.description || !newProduct.price || !newProduct.status || !newProduct.code || !newProduct.stock) {
+    if (!product.title || !product.description || !product.price || !product.status || !product.code || !product.stock) {
         return res.status(400).send({status: 'error', message: 'Incomplete values'});
-    }
-
-    const newProduct = { id: productId, ...product }
-
-    const index = data.findIndex(u => u.id === productId)
-
-    if (index != -1) {
-        data[index] = newProduct;
-        res.send({status: 'sucess', message: 'Product updated'});
-    } else {
-        res.status(404).send({status: 'error', message: 'Product not found'});
+    }else{
+        const products = await prodMng.editProduct(productId);
+        res.send(product);
     }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
     const productId = Number(req.params.id);
-
-    const index = data.findIndex(u => u.id === productId);
-
-    if (index != -1) {
-        data.splice(index, 1);
-        res.send({status: 'sucess', message: 'Product deleted'});
-    } else {
-        res.status(404).send({status: 'error', message: 'Product not found'});
+    try {
+        const products = await prodMng.deleteProduct(productId);
+        res.send(products);
+    } catch (error) {
+        res.status(404).send(error.message);
+        
     }
 });
 

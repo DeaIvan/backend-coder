@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { promises } from 'fs';
 import fs from 'fs';
-import CartManager from '../src/CartManager.js';
+import CartManager from '../manager/CartManager.js';
 
 
 const cartMng = new CartManager("./carts.json");

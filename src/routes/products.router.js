@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { promises } from 'fs';
 import fs from 'fs';
-import ProductManager from '../src/ProductManager.js';
+import ProductManager from '../manager/ProductManager.js';
 
 
 const prodMng = new ProductManager("./productos.json");

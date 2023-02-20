@@ -108,16 +108,5 @@
 		"category": "Producto",
 		"thumbnails": "",
 		"id": 10
-	},
-	{
-		"id": 1,
-		"title": "Intelligent Steel Table",
-		"description": "In corrupti eius.",
-		"price": 935,
-		"status": true,
-		"code": "w",
-		"stock": 100,
-		"category": "Producto",
-		"thumbnails": ""
 	}
 ]
